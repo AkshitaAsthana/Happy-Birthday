@@ -1,0 +1,408 @@
+/* Reset some default styles for consistency */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f79191; /* Soft pink background */
+}
+
+
+/* Section Styles */
+section {
+    margin: 20px;
+    padding: 20px;
+    /* Semi-transparent white background */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+#about {
+    /* Set the background image URL and other properties */
+    background-image: linear-gradient(135deg, #FF6B6B, #FFD166, #88D8B0, #6A0572);
+    background-size: contain; /* Adjust the background size to maintain aspect ratio */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   
+    /* Set the height to 75% of the viewport height */
+    height: 100vh; /* vh stands for viewport height */
+
+
+    color: white;
+    padding: 2%;
+    margin: 2%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#about h1 {
+    /* Add typewriter animation */
+    padding-top: 8%;
+    padding-left: 6%;
+    padding-bottom: 4%;
+    color: #6A0572;
+    font-size: 3rem; /* Adjust font size as needed */
+    position: relative; /* Set position to relative for animation */
+    top: 0; /* Initial position from the top */
+    overflow: hidden; /* Hide overflowing text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    width: 0; /* Start with zero width for typewriter effect */
+    animation: typewriter 3s steps(30) 1s 1 normal both; /* Typewriter animation */
+
+    @media screen and (max-width: 768px) {
+        font-size: 2rem; 
+
+    }
+}
+
+/* Keyframes for typewriter animation */
+@keyframes typewriter {
+    from {
+        width: 0; /* Start with zero width */
+    }
+    to {
+        width: 100%; /* Increase width to 100% for complete text */
+    }
+}
+
+
+#about h2 {
+    /* Add animation to the h2 element */
+    padding: 2% 5% 5% 5%;
+    text-align: left;
+    font-size: 4vh;
+    color: #FF2222;
+
+    
+    /* Start the animation after a delay of 4 seconds (adjust as needed) */
+    animation: fadeIn 2s ease-in-out 4s 1 normal both; /* Example animation */
+}
+
+/* Keyframes for the fadeIn animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.aaa{
+    padding-top: 3%;
+    padding-left: 8%;
+}
+
+
+#about img {
+    height: auto;
+    max-width: 30%; /* Adjust the maximum width to control the image size */
+    opacity: 0; /* Initially set opacity to 0 for fade-in effect */
+    animation: fadeIn 2s ease-in-out 2s 1 normal both; /* Fade-in animation */
+    position: absolute; /* Set position to absolute for precise placement */
+
+    /* Adjust the top position to move the image below the h2 for small screens */
+    top: 150px; /* Adjust this value as needed */
+
+    right: 5%; /* Align the image to the right with padding */
+    transform: perspective(1000px) rotateY(15deg); /* Add a 3D perspective effect */
+
+    /* Use a media query to apply different styles for small screens */
+    @media screen and (max-width: 768px) {
+        align-items: center;
+        max-width: 80%; /* Make the image full width on small screens */
+        top: initial; /* Remove the top positioning for small screens */
+        bottom: 10px; /* Position the image below the h2 on small screens */
+        margin: 0 auto; /* Center the image horizontally within its container */
+    }
+    
+}
+
+
+
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Add more styles as needed for other sections and elements */
+
+/* Media Query for Responsiveness (adjust as needed) */
+@media (max-width: 768px) {
+    section {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .photo {
+        flex: 0 1 calc(50% - 10px);
+    }
+
+    /* Add more responsive styles as needed */
+}
+
+
+.active{
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+    padding-top:3%;
+    height: 90vh;
+    width: 90vh;
+    background-color: rgba(0,0,0,0.9);
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+    @media screen and (max-width: 768px) {
+        height: 45vh;
+        width: 35vh;
+    }
+
+
+    
+
+}
+
+/* CSS for Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 800px; /* Adjust the container width as needed */
+    margin: 0 auto;
+}
+
+/* CSS for Slides */
+.slide {
+    display: none;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* CSS for Captions (Optional) */
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.wishes{
+    padding-top: 3%;
+    padding-left: 8%;
+    padding-bottom: 3%;
+    font-size: 5vh;
+
+    @media screen and (max-width: 768px) {
+        font-size: 3vh;
+    }
+   
+
+}
+
+
+#Gallery{
+    padding-top: 3%;
+    padding-left: 8%;
+    padding-bottom: 3%;
+    background-color: antiquewhite;
+
+}
+
+/* Initial state - hidden */
+.wishes {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 4s ease;
+
+    
+}
+
+/* Animation when the "active" class is added */
+.wishes.act {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style the section and its content */
+#future {
+    padding: 20px;
+    background-color: #FCE5E5;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+#future h2 {
+    text-align: center;
+    text-decoration: underline;
+    color: #FF7171; /* Reddish heading color */
+    font-size: 28px;
+    margin-bottom: 10px;
+    padding: 2%;
+}
+
+#future p {
+    font-size: large;
+    color: #555;
+    margin-bottom: 10px;
+}
+.spoiler-container {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ li {
+    list-style-type: none;
+    padding-left: 2%;
+    font-size: 30px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.typewriter {
+    color: #6A0572;
+    font-size: 3rem; /* Adjust font size as needed */
+    position: relative; /* Set position to relative for animation */
+    top: 0; /* Initial position from the top */
+    overflow: hidden; /* Hide overflowing text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    width: 0; /* Start with zero width for typewriter effect */
+    animation: typewriter 3s steps(30) 7s 1 normal both; /* Typewriter animation */
+}
+
+@media screen and (max-width: 768px) {
+    .typewriter {
+        display: none;
+    }
+}
+
+
+.typewriterss {
+
+    color: #6A0572;
+    font-size: 40px; /* Adjust font size as needed */
+    position: relative; /* Set position to relative for animation */
+    top: 0; /* Initial position from the top */
+    overflow: hidden; /* Hide overflowing text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    width: 0; /* Start with zero width for typewriter effect */
+    animation: typewriter 3s steps(30) 10s 1 normal both; /* Typewriter animation */
+
+    @media screen and (max-width: 768px) {
+         
+            display: none;
+    }
+}
+
+/* Keyframes for typewriter animation */
+@keyframes typewriter {
+    from {
+        width: 0; /* Start with zero width */
+    }
+    to {
+        width: 100%; /* Increase width to 100% for complete text */
+    }
+}
+
+
+/* Surprise Element Section Styles */
+#surprise {
+    background-color: #ecf2f4; /* Gold background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 20px;
+}
+
+#surprise h2 {
+    padding: 2%;
+    font-size: 3rem;
+    color: #FF6347; /* Tomato red heading color */
+}
+
+#surprise p {
+    padding-bottom: 2%;
+    font-size: 1.2rem;
+    color: #333; /* Dark gray text color */
+}
+
+.btn-surprise {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF6347; /* Tomato red button background */
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.btn-surprise:hover {
+    background-color: #FF4500; /* Slightly darker red on hover */
+}
+
+/* Well Wishes Section Styles */
+#well-wishes {
+    background-color: #a5e6a7; /* Green background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 20px;
+}
+
+#well-wishes h2 {
+    color: #FF6347; /* Tomato red heading color */
+    font-size: 3rem;
+    padding: 2%;
+}
+
+#generate-wish {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF6347; /* Tomato red button background */
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+#generate-wish:hover {
+    background-color: #FF4500; /* Slightly darker red on hover */
+}
+
+#wish-display {
+    font-size: 2rem;
+    color: #333333; /* Dark gray text color */
+    margin-top: 10px;
+}

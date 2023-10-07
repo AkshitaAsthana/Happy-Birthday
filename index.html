@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Yash!</title>
+    <!-- Add your CSS stylesheet link here -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- About Our Friendship Section -->
+    <section id="about">
+        <h1>Happy Birthday, Yash</h1>
+        <img src="pics/WhatsApp Image 2023-09-20 at 09.47.45(2).jpeg">
+        <h2>“Hope all your birthday wishes come true!”</h2>
+        <h2 class="aaa">🎂 🙂 🎈 </h2>
+
+    </section>
+
+    <!-- Birthday Wishes Section -->
+ 
+    <section id="Gallery">
+        <h2 class="wishes">Wish you to be always happy with your family and friends</h2>
+    
+        <!-- 3D Image Gallery -->
+        
+              
+            
+            
+               <div class="slideshow-container">
+        <!-- Include your provided slideshow here -->
+        <div class="slides">
+            <div class="slide">
+                <img src="pics/WhatsApp Image 2023-09-20 at 09.47.45.jpeg" alt="Image 1" class="active">
+            </div>
+            <div class="slide">
+                <img src="pics/WhatsApp Image 2023-09-20 at 09.47.45(1).jpeg" alt="Image 2" class="active">
+            </div>
+            <div class="slide">
+                <img src="pics/WhatsApp Image 2023-09-20 at 09.47.46.jpeg" alt="Image 3" class="active">
+            </div>
+            <div class="slide">
+                <img src="pics/WhatsApp Image 2023-09-20 at 09.47.48.jpeg" alt="Image 4" class="active">
+            </div>
+            <div class="slide">
+                <img src="pics/WhatsApp Image 2023-09-20 at 09.48.15.jpeg" alt="Image 5" class="active">
+            </div>
+        </div>
+            
+    </section>
+    
+    <!-- Future Plans Section -->
+    <section id="future">
+        <h2 class="animate-character" id="future-plans">Future Plans</h2>
+        <p class="typewriter">Looking ahead, there are so many adventures we have yet to embark on together. From more road trips to conquering new challenges, our future is bright and full of promise.</p>
+        <p class="typewriterss">Here are some of the things we plan to do together:</p>
+        <!-- Share your goals and promises for the future -->
+        <div class="spoiler-container"></div>
+        <ul>
+            
+            <li class="spoiler-content">Travel to at least three new countries 🌎</li>
+           
+        
+        
+            <li class="spoiler-content">Buy a PS5 together 🎮</li>
+            
+       
+            <li class="spoiler-content">Build a game company together 👬</li>
+          
+        </div>
+            <!-- Add more future plans here -->
+        </ul>
+    </section>
+    
+    
+    
+
+    <!-- Surprise Element Section -->
+    <section id="surprise">
+        <h2>Surprise Element</h2>
+        <p>What's a birthday without a Gift? Click below to get your gift.</p>
+        <!-- Reveal your virtual surprise and hidden pages here -->
+        <a href="surprise-page.html" class="btn-surprise">Open Surprise</a>
+    </section>
+
+    
+
+    <!-- HTML code for the "Random Well Wishes" section -->
+    <section id="well-wishes">
+        <h2>Random Well Wishes</h2>
+        <button id="generate-wish" class="btn-surprise">Generate a Well Wish</button>
+        <p id="wish-display"></p>
+    </section>
+
+    <!-- JavaScript code to generate random well wishes -->
+    <script>
+        // Array of well wishes
+        var wellWishes = [
+            "May your day be filled with laughter and joy!",
+            "Wishing you another year of success, health, and happiness.",
+            "Here's to a year filled with exciting adventures and new opportunities!",
+            "May all your dreams and wishes come true on this special day.",
+            "Sending you lots of love and good vibes on your birthday!",
+            "Cheers to another year of amazing memories and achievements.",
+            "May this year be the best one yet!",
+            "Wishing you a day as wonderful as you are."
+        ];
+
+        // Function to generate a random well wish
+        function generateRandomWish() {
+            var randomIndex = Math.floor(Math.random() * wellWishes.length);
+            return wellWishes[randomIndex];
+        }
+
+        // Event listener for the "Generate a Well Wish" button
+        document.getElementById("generate-wish").addEventListener("click", function () {
+            var wishDisplay = document.getElementById("wish-display");
+            var randomWish = generateRandomWish();
+            wishDisplay.textContent = randomWish;
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("slide");
+        
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        
+        slideIndex++;
+        
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 2000); // Change slide every 2 seconds (adjust as needed)
+    }
+});
+
+// Function to check if an element is in the viewport
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+}
+
+// Function to handle the scroll event
+function handleScroll() {
+    const wishesElement = document.querySelector('.wishes');
+    
+    if (isElementInViewport(wishesElement)) {
+        wishesElement.classList.add('act');
+        // Remove the scroll event listener after the animation has played
+        window.removeEventListener('scroll', handleScroll);
+    }
+}
+
+// Add a scroll event listener to trigger the animation
+window.addEventListener('scroll', handleScroll);
+
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+
+
+
+
+    </script>
+
+</body>
+</html>
